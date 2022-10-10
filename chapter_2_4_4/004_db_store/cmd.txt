@@ -1,0 +1,9 @@
+go env -w GOPROXY=https://goproxy.io
+go env -w GO111MODULE=on
+go mod init dbstore
+go mod tidy
+go build db-store.go
+go run db-store.go
+go run db-store.go printchain
+go run db-store.go addblock -data "send 1BTC to Pig"
+go run db-store.go printchain
